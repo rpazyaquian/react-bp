@@ -4,11 +4,18 @@
   "description": "Barebones boilerplate for new React projects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "jsx -x jsx static/script/jsx/ static/script/js/",
+    "browserify": "browserify static/script/js/app.js -o static/script/build/index.js",
+    "build": "echo \"Built files.\"",
+    "prebuild": "npm run browserify",
+    "prebrowserify": "npm run compile"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^0.13.3"
+    "browserify": "^11.0.1",
+    "react": "^0.13.3",
+    "react-tools": "^0.13.3"
   }
 }
